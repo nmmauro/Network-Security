@@ -1,2 +1,2 @@
-# Network-Security-Projects
+# Network-Security
 CS558 Projects
